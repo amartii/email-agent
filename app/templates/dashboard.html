@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Email Agent — Dashboard{% endblock %}
+{% block step3_active %}active{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-start mb-4">
+    <div>
+        <h1 class="oto-page-title mb-1" id="campaignTitle">Campaña</h1>
+        <div class="d-flex align-items-center gap-2">
+            <span id="campaignStatus"></span>
+            <span class="text-muted small" id="lastUpdated"></span>
+        </div>
+    </div>
+    <div class="d-flex gap-2 mt-1">
+        <button class="btn btn-oto-outline btn-sm" id="btnPause">
+            <i class="bi bi-pause-circle me-1"></i>Pausar
+        </button>
+        <button class="btn btn-sm" id="btnReset" style="border:1px solid #dc2626;color:#dc2626;border-radius:2px;background:transparent;font-size:0.8rem;padding:0.35rem 0.9rem;font-weight:500;">
+            <i class="bi bi-arrow-counterclockwise me-1"></i>Nueva campaña
+        </button>
+    </div>
+</div>
+
+<!-- Error banner -->
+<div id="errorBanner" class="alert alert-danger d-none mb-4">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+    <strong>Error de envío:</strong> <span id="errorMsg"></span>
+    <div class="mt-2 small">
+        Ve al <a href="/configure" class="alert-link">Paso 2</a>, comprueba tu Gmail y App Password, y vuelve a lanzar la campaña.
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="oto-stat stat-total">
+            <div class="oto-stat-value" id="statTotal">—</div>
+            <div class="oto-stat-label">Total</div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="oto-stat stat-sent">
+            <div class="oto-stat-value" id="statSent">—</div>
+            <div class="oto-stat-label">Enviados</div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="oto-stat stat-replied">
+            <div class="oto-stat-value" id="statReplied">—</div>
+            <div class="oto-stat-label">Respondidos</div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="oto-stat stat-pending">
+            <div class="oto-stat-value" id="statPending">—</div>
+            <div class="oto-stat-label">Sin respuesta</div>
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-people me-2"></i>Contactos</span>
+        <small class="text-muted">Actualización automática cada 30 s</small>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Estado</th>
+                        <th>Enviado</th>
+                        <th>Respondido</th>
+                        <th>Follow-up</th>
+                        <th>Error</th>
+                    </tr>
+                </thead>
+                <tbody id="contactsTable">
+                    <tr><td colspan="7" class="text-center py-5">
+                        <span class="spinner-border spinner-border-sm me-2" style="color:var(--oto-blue)"></span>
+                        <span class="text-muted">Cargando...</span>
+                    </td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

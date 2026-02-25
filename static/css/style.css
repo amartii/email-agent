@@ -1,0 +1,191 @@
+/* ═══════════════════════════════════════════════════════
+   Email Agent — ONEtoONE CF Brand Style
+   Colors  : Navy #0C2340 | Blue #0056A7 | Accent #1863DC
+             Cream #F9F7EE | White #FFFFFF
+   Fonts   : Fraunces (headings) + Inter (body)
+═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --oto-navy:   #0C2340;
+    --oto-blue:   #0056A7;
+    --oto-accent: #1863DC;
+    --oto-cream:  #F9F7EE;
+    --oto-text:   #1A1A2E;
+    --oto-muted:  #6B7280;
+    --oto-border: #E5E7EB;
+    --oto-white:  #FFFFFF;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--oto-cream);
+    font-family: 'Inter', sans-serif;
+    color: var(--oto-text);
+    font-size: 0.925rem;
+}
+
+.oto-navbar {
+    background-color: var(--oto-navy) !important;
+    border-bottom: 2px solid var(--oto-blue);
+    padding: 0.75rem 2rem;
+}
+.oto-navbar .navbar-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    color: var(--oto-white) !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.oto-navbar .brand-sep {
+    color: var(--oto-blue);
+    font-weight: 300;
+    margin: 0 0.5rem;
+}
+.oto-navbar .brand-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.oto-steps { display: flex; gap: 0.25rem; align-items: center; }
+.oto-step {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 2px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-decoration: none !important;
+    color: #94a3b8 !important;
+    transition: all 0.2s;
+}
+.oto-step:hover { color: var(--oto-white) !important; background: rgba(255,255,255,0.08); }
+.oto-step.active { background: var(--oto-blue) !important; color: var(--oto-white) !important; }
+.oto-step-num {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 600;
+}
+.oto-step.active .oto-step-num { background: rgba(255,255,255,0.25); }
+
+.card { border-radius: 2px; border: 1px solid var(--oto-border); box-shadow: 0 1px 4px rgba(12,35,64,0.06); }
+.card-header {
+    background: var(--oto-white); border-bottom: 1px solid var(--oto-border);
+    font-weight: 500; font-size: 0.85rem; letter-spacing: 0.02em;
+    color: var(--oto-navy); padding: 0.9rem 1.25rem;
+}
+
+.oto-page-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300; font-size: 1.6rem;
+    color: var(--oto-navy); margin-bottom: 0.25rem; line-height: 1.2;
+}
+.oto-page-subtitle { color: var(--oto-muted); font-size: 0.875rem; margin-bottom: 1.75rem; }
+
+.oto-stat {
+    background: var(--oto-white);
+    border: 1px solid var(--oto-border);
+    border-top: 3px solid var(--oto-border);
+    border-radius: 2px; padding: 1.25rem 1rem; text-align: center;
+    transition: border-top-color 0.2s;
+}
+.oto-stat.stat-total   { border-top-color: var(--oto-navy); }
+.oto-stat.stat-sent    { border-top-color: var(--oto-blue); }
+.oto-stat.stat-replied { border-top-color: #059669; }
+.oto-stat.stat-pending { border-top-color: #D97706; }
+.oto-stat-value {
+    font-family: 'Fraunces', serif;
+    font-size: 2.4rem; font-weight: 300;
+    color: var(--oto-navy); line-height: 1; margin-bottom: 0.3rem;
+}
+.oto-stat-label {
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.07em; color: var(--oto-muted); font-weight: 500;
+}
+
+.btn-oto-primary {
+    background-color: var(--oto-navy); color: var(--oto-white);
+    border: none; border-radius: 2px; font-weight: 500;
+    font-size: 0.875rem; letter-spacing: 0.02em;
+    padding: 0.6rem 1.5rem; transition: background-color 0.2s;
+}
+.btn-oto-primary:hover { background-color: var(--oto-blue); color: var(--oto-white); }
+.btn-oto-outline {
+    background-color: transparent; color: var(--oto-navy);
+    border: 1px solid var(--oto-navy); border-radius: 2px;
+    font-weight: 500; font-size: 0.875rem; padding: 0.5rem 1.2rem; transition: all 0.2s;
+}
+.btn-oto-outline:hover { background-color: var(--oto-navy); color: var(--oto-white); }
+.btn-oto-accent {
+    background-color: var(--oto-accent); color: var(--oto-white);
+    border: none; border-radius: 2px; font-weight: 500;
+    font-size: 0.875rem; padding: 0.6rem 1.5rem; transition: background-color 0.2s;
+}
+.btn-oto-accent:hover { background-color: #1456c4; color: var(--oto-white); }
+
+.form-control, .form-select { border-radius: 2px; border: 1px solid var(--oto-border); font-size: 0.875rem; color: var(--oto-text); }
+.form-control:focus, .form-select:focus { border-color: var(--oto-blue); box-shadow: 0 0 0 3px rgba(0,86,167,0.12); }
+.form-label { font-size: 0.8rem; font-weight: 500; color: var(--oto-navy); letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 0.35rem; }
+.form-text { font-size: 0.78rem; color: var(--oto-muted); }
+
+.table { font-size: 0.85rem; }
+.table thead th {
+    background: var(--oto-navy); color: rgba(255,255,255,0.85);
+    font-weight: 500; font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.06em; border: none; padding: 0.85rem 1rem;
+}
+.table tbody td { padding: 0.8rem 1rem; vertical-align: middle; border-bottom: 1px solid var(--oto-border); }
+.table tbody tr:hover { background-color: rgba(0,86,167,0.03); }
+
+.badge-status { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.3em 0.7em; border-radius: 2px; text-transform: uppercase; }
+.badge-pending    { background: #E5E7EB; color: #374151; }
+.badge-sent       { background: #DBEAFE; color: var(--oto-blue); }
+.badge-replied    { background: #D1FAE5; color: #065F46; }
+.badge-followup_sent { background: #FEF3C7; color: #92400E; }
+.badge-bounced    { background: #FEE2E2; color: #991B1B; }
+.badge-running    { background: #DBEAFE; color: var(--oto-blue); }
+.badge-paused     { background: #FEF3C7; color: #92400E; }
+.badge-error      { background: #FEE2E2; color: #991B1B; }
+.badge-draft      { background: #E5E7EB; color: #374151; }
+
+.oto-dropzone {
+    border: 2px dashed var(--oto-border); border-radius: 2px;
+    background: var(--oto-white); padding: 3rem 2rem; text-align: center;
+    cursor: pointer; transition: all 0.2s;
+}
+.oto-dropzone:hover, .oto-dropzone.dragover { border-color: var(--oto-blue); background: rgba(0,86,167,0.02); }
+.oto-dropzone-icon { font-size: 2.5rem; color: var(--oto-blue); margin-bottom: 0.75rem; opacity: 0.7; }
+.oto-dropzone-text { font-size: 0.9rem; color: var(--oto-muted); margin-bottom: 1rem; }
+
+.alert { border-radius: 2px; font-size: 0.875rem; border-left-width: 3px; }
+.alert-danger  { border-left-color: #DC2626; }
+.alert-success { border-left-color: #059669; }
+.alert-warning { border-left-color: #D97706; }
+.alert-info    { border-left-color: var(--oto-blue); }
+
+.oto-info-pill {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(0,86,167,0.06); color: var(--oto-blue);
+    border: 1px solid rgba(0,86,167,0.15); border-radius: 2px;
+    padding: 0.4rem 0.8rem; font-size: 0.78rem; font-weight: 500;
+}
+
+#campaignTitle { font-family: 'Fraunces', serif; font-weight: 300; font-size: 1.4rem; color: var(--oto-navy); }
+
+@media (max-width: 768px) {
+    .oto-navbar { padding: 0.6rem 1rem; }
+    .brand-sub { display: none; }
+    .oto-stat-value { font-size: 1.8rem; }
+}
